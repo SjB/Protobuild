@@ -36,7 +36,7 @@ namespace Protobuild.Tasks
                 "Starting clean of projects for " + this.Platform);
 
             var module = ModuleInfo.Load(Path.Combine(this.RootPath, "Build", "Module.xml"));
-            var definitions = module.GetDefinitionsRecursively(this.Platform).ToArray();
+            var definitions = module.GetDefinitions().ToArray();
             
             // Run Protobuild in batch mode in each of the submodules
             // where it is present.
